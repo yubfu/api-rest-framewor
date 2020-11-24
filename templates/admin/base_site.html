@@ -1,0 +1,21 @@
+{# Template: /admin/base_site.html #}
+{% extends "admin/base_site.html" %}
+{% load static i18n %}
+
+{# Setup favicon #}
+{% block extrahead %}<link rel="shortcut icon" type="image/jpeg" href="{{MEDIA_URL}}/media/icon/favicon.jpeg"/>{% endblock %}
+
+{# Setup browser tab label #}
+{% block title %}{{ title }} |  {% trans "Numisred_Co" %}{% endblock %}
+
+{# Setup branding #}
+{% block branding %}
+    <h1 id="site-name">
+        <a href="{% url 'admin:index' %}">
+            {# Your logo here #}
+            <img style="background-color: white" src="{{MEDIA_URL}}/media/icon/logo3.gif" alt="Numisred_Co" height="110%" width="110%">
+            <br><br>
+            </span> {% trans "Numisred_Co" %}
+        </a>
+    </h1>
+{% endblock %}
